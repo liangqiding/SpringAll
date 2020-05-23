@@ -22,6 +22,7 @@ public class IndexController {
     */
     @RequestMapping("/index")
     public String index() {
+        System.out.println();
         return "index.html";
     }
 
