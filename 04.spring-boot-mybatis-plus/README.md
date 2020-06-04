@@ -59,7 +59,7 @@ logging.level.com.springboot.mybatis_plus.dao: debug
 ```
 
 ## 1.4 创建 com/springboot/mybatis_plus/dao/UserMapper.java 数据库操作接口 
-```
+```java
  @Mapper
  public interface UserMapper extends BaseMapper<User> {
  /**
@@ -70,7 +70,7 @@ logging.level.com.springboot.mybatis_plus.dao: debug
 ```
 
 ## 1.5 创建实体类 com/springboot/mybatis_plus/domain/User.java
-```
+```java
 package com.springboot.mybatis_plus.domain;
 
 import com.baomidou.mybatisplus.enums.IdType;
@@ -140,40 +140,43 @@ public class User extends Model<User> {
 
 ## 1.6 src/main/resources/mybatis/mapper/UserMapper.xml 创建xml映射文件
 ***
-######    <?xml version="1.0" encoding="UTF-8"?>
-######    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-######    <mapper namespace="com.springboot.mybatis_plus.dao.UserMapper">
-######
-######   <!-- 开启二级缓存 -->
-######   <!--    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
-######
-######   <!-- 通用查询映射结果 -->
-######    <resultMap id="BaseResultMap" type="com.springboot.mybatis_plus.domain.User">
-######        <id column="user_id" property="userId" />
-######        <result column="user_account" property="userAccount" />
-######        <result column="user_passwd" property="userPasswd" />
-######        <result column="user_name" property="userName" />
-######        <result column="user_mail" property="userMail" />
-######        <result column="user_lv" property="userLv" />
-######        <result column="user_enable" property="userEnable" />
-######       <result column="user_create_datetime" property="userCreateDatetime" />
-######        <result column="user_phone" property="userPhone" />
-######    </resultMap>
-######
-######    <!-- 通用查询结果列 -->
-######    <sql id="Base_Column_List">
-######        user_id, user_account, user_passwd, user_name, user_mail, user_lv, user_enable, user_create_datetime, user_phone
-######    </sql>
-######   <select id="findAll" resultType="User">
-######       select 
-######       <include refid="Base_Column_List"></include>
-######        from 
-######        user 
-######    </select>
-######   </mapper>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.mybatis_plus.dao.UserMapper">
+
+    <!-- 开启二级缓存 -->
+<!--    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.springboot.mybatis_plus.domain.User">
+        <id column="user_id" property="userId" />
+        <result column="user_account" property="userAccount" />
+        <result column="user_passwd" property="userPasswd" />
+        <result column="user_name" property="userName" />
+        <result column="user_mail" property="userMail" />
+        <result column="user_lv" property="userLv" />
+        <result column="user_enable" property="userEnable" />
+        <result column="user_create_datetime" property="userCreateDatetime" />
+        <result column="user_phone" property="userPhone" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, user_account, user_passwd, user_name, user_mail, user_lv, user_enable, user_create_datetime, user_phone
+    </sql>
+  <select id="findAll" resultType="User">
+      select
+      <include refid="Base_Column_List"></include>
+      from
+      user
+  </select>
+</mapper>
+
+```
 ***
 ## 1.7编写测试类 com/springboot/mybatis_plus/SpringBootMybatisPlusApplicationTests.java
-```
+```java
 @SpringBootTest
 class SpringBootMybatisPlusApplicationTests {
     @Autowired
@@ -190,7 +193,7 @@ class SpringBootMybatisPlusApplicationTests {
 ### 2 SpringBoot整合MyBatis-Plus代码自动生成类
 
 ## 2.1 创建 com/springboot/mybatis_plus/utils/GlobalConfigs.java
-```
+```java
 
 public class GlobalConfigs {
 
