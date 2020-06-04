@@ -1,4 +1,4 @@
-# 1 springboot 整合mybatis-plus
+# 1 springboot 整合mybatis-plus 及代码生成工具
 
 ## 1.1引入 mybatis-plus 依赖
 ><!--       mybatis -->
@@ -138,9 +138,9 @@ public class User extends Model<User> {
 
 ## 1.6 src/main/resources/mybatis/mapper/UserMapper.xml 创建xml映射文件
 
-> <?xml version="1.0" encoding="UTF-8"?>
-> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-> <mapper namespace="com.springboot.mybatis_plus.dao.UserMapper">
+>    <?xml version="1.0" encoding="UTF-8"?>
+>    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+>    <mapper namespace="com.springboot.mybatis_plus.dao.UserMapper">
 >
 >   <!-- 开启二级缓存 -->
 >   <!--    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
@@ -168,7 +168,7 @@ public class User extends Model<User> {
 >       from 
 >       user 
 >   </select>
->  </mapper>
+>   </mapper>
 
 ## 1.7编写测试类 com/springboot/mybatis_plus/SpringBootMybatisPlusApplicationTests.java
 ```
