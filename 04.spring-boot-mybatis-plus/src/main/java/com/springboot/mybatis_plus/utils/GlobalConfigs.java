@@ -1,4 +1,4 @@
-package com.springboot.springbootmybatisplus.untils;
+package com.springboot.mybatis_plus.utils;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
