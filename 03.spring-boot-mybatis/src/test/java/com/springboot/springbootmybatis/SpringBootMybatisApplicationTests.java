@@ -22,6 +22,7 @@ class SpringBootMybatisApplicationTests {
     }
     @Test
     void UserMapper_update() {
+
         User user = new User();
         user.setId(1);
         user.setDate("2020.05.24");
