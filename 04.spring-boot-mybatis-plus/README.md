@@ -15,46 +15,48 @@
 
 ## 1.3 配置 application.yml文件
 
->spring:
->   datasource:
->     driver-class-name: com.mysql.jdbc.Driver
->     url: jdbc:mysql://localhost:3306/i2dsp_emg?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
->     username: root
->     password: 12345678
-> 
-> mybatis-plus:
->   # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
->   # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
->   mapper-locations: classpath:mybatis/mapper/*.xml
->   #实体扫描，多个package用逗号或者分号分隔
->   typeAliasesPackage: com.springboot.mybatis_plus.domain
->   global-config:
->     #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
->     id-type: 0
->     #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
->     field-strategy: 1
->     #驼峰下划线转换
->     #db-column-underline: true
->     #刷新mapper 调试神器
->     refresh-mapper: true
->     #数据库大写下划线转换
->     #capital-mode: true
->     #Sequence序列接口实现类配置
->     #key-generator: com.baomidou.mybatisplus.incrementer.OracleKeyGenerator
->     #逻辑删除配置（下面3个配置）
->     #logic-delete-value: 1
->     #logic-not-delete-value: 0
->     #sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
->    #自定义填充策略接口实现
->     #meta-object-handler: com.baomidou.springboot.MyMetaObjectHandler
->   configuration:
->     map-underscore-to-camel-case: true
->     cache-enabled: false
->     #配置JdbcTypeForNull
->     jdbc-type-for-null: 'null'
->  #开启日记模式 显示sql运行情况
->  logging.level.com.springboot.mybatis_plus.dao: debug
+```$xslt
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/i2dsp_emg?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 12345678
 
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.springboot.mybatis_plus.domain
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 0
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 1
+    #驼峰下划线转换
+    #db-column-underline: true
+    #刷新mapper 调试神器
+    refresh-mapper: true
+    #数据库大写下划线转换
+    #capital-mode: true
+    #Sequence序列接口实现类配置
+    #key-generator: com.springboot.mybatis_plus.incrementer.OracleKeyGenerator
+    #逻辑删除配置（下面3个配置）
+    #logic-delete-value: 1
+    #logic-not-delete-value: 0
+    #sql-injector: com.springboot.mybatis_plus.dao.LogicSqlInjector
+    #自定义填充策略接口实现
+    #meta-object-handler: com.springboot.mybatis_plus.MyMetaObjectHandler
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    #配置JdbcTypeForNull
+    jdbc-type-for-null: 'null'
+
+logging.level.com.springboot.mybatis_plus.dao: debug
+
+```
 
 ## 1.4 创建 com/springboot/mybatis_plus/dao/UserMapper.java 数据库操作接口 
 ```
