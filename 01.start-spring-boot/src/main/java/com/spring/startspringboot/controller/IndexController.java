@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author 梁其定
+ * @author QiDing
  * @version 1.0
  * @date 2020/5/23/023 12:00
  * @descriptio
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
     /**
-     * @Author : 梁其定
+     * @Author : QiDing
      * @Date : 2020/5/23/023 12:01
      * @Description : TODO
      * @params:
