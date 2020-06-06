@@ -8,7 +8,6 @@
         select * from  user
     </select>
 
-
     <update id="updateUser" parameterType="user">
     UPDATE
     user

@@ -1,6 +1,6 @@
-# 1 springboot 整合mybatis-plus 及代码生成工具
+# 1 启动springboot
 
-## 1.1 01.start-spring-boot/pom.xml文件中引入 spring-boot-starter-web 依赖
+## 1.1 pom.xml文件中引入 spring-boot-starter-web 依赖
 ```
       <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -8,9 +8,7 @@
         </dependency>
 ```
 
-
-
-## 1.2 创建 com/spring/startspringboot/controller/IndexController.java ,Controller（控制器）是应用程序中处理用户交互的部分
+## 1.2 创建 controller/IndexController.java ,Controller（控制器）是应用程序中处理用户交互的部分
 ```java
 @Controller
 public class IndexController {

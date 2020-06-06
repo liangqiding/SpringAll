@@ -3,6 +3,8 @@ package com.springboot.springbootmybatis.service;
 import com.springboot.springbootmybatis.domain.User;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author 梁其定
  * @version 1.0
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Service;
  */
 
 public interface UserService {
-    User fineAll();
+    List<User> fineAll();
     int updateUser(User user);
     int delUser(Integer id);
     int InsertUser(User user);

@@ -3,6 +3,8 @@ package com.springboot.springbootmybatis.dao;
 import com.springboot.springbootmybatis.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @author 梁其定
  * @version 1.0
@@ -12,8 +14,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
 
-       User fineAll();
-
+       List<User> fineAll();
        int updateUser(User user);
        int delUser(Integer id);
        int InsertUser(User user);
