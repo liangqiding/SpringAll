@@ -1,5 +1,8 @@
 package com.springboot.springbootmybatis;
 
+
+
+
 import com.springboot.springbootmybatis.dao.UserMapper;
 import com.springboot.springbootmybatis.domain.User;
 import org.junit.jupiter.api.Test;
@@ -9,17 +12,23 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class SpringBootMybatisApplicationTests {
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapperA;
+//    public SpringBootMybatisApplicationTests(UserMapper userMapper) {
+//        this.userMapper=userMapper;
+//    }
 
     @Test
     void contextLoads() {
+//        System.out.println(userMapper);
+
     }
 
     @Test
     void UserMapper_fillAll() {
-        User user = userMapper.fineAll();
+        User user = userMapperA.fineAll();
         System.out.println(user);
     }
+
     @Test
     void UserMapper_update() {
 
@@ -29,11 +38,12 @@ class SpringBootMybatisApplicationTests {
         user.setName("admin");
         user.setUsername("llll");
         user.setPassword("123456");
-        System.out.println(userMapper.updateUser(user));
+        System.out.println(userMapperA.updateUser(user));
     }
+
     @Test
     void UserMapper_delete() {
-        System.out.println(userMapper.delUser(2));
+        System.out.println(userMapperA.delUser(2));
     }
 
     @Test
@@ -43,7 +53,7 @@ class SpringBootMybatisApplicationTests {
         user.setName("aaa");
         user.setUsername("llll");
         user.setPassword("123456");
-        int i = userMapper.InsertUser(user);
+        int i = userMapperA.InsertUser(user);
         System.out.println(i);
     }
 }

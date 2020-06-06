@@ -11,8 +11,11 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserMapper {
+
        User fineAll();
+
        int updateUser(User user);
        int delUser(Integer id);
        int InsertUser(User user);
+
 }
