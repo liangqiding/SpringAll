@@ -27,9 +27,9 @@ public class GlobalConfigs {
         //1.全局配置
         GlobalConfig config = new GlobalConfig();
         config.setActiveRecord(true)    //是否支持AR模式
-                .setAuthor("梁其定")  //作者
+                .setAuthor("QiDing")  //作者
                 .setOutputDir("E:\\myGitHub\\SpringAll\\04.spring-boot-mybatis-plus\\src\\main\\java\\")  //生成路径
-                .setFileOverride(true)  //文件覆盖
+                .setFileOverride(false)  //文件覆盖
                 .setIdType(IdType.AUTO)     //主键策略
                 .setServiceName("%sService")    //设置生成的service接口的名字的首字母是否为I
                 .setBaseResultMap(true)     //xml映射文件的配置
@@ -38,7 +38,7 @@ public class GlobalConfigs {
         DataSourceConfig dsConfig = new DataSourceConfig();
         dsConfig.setDbType(DbType.MYSQL)  //设置数据库类型
                 .setDriverName("com.mysql.jdbc.Driver")
-                .setUrl("jdbc:mysql://localhost:3306/i2dsp_emg?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC")
+                .setUrl("jdbc:mysql://localhost:3306/spring-boot-mybatis?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC")
                 .setUsername("root")
                 .setPassword("12345678");
         //3.策略配置
@@ -47,10 +47,10 @@ public class GlobalConfigs {
                 .setTablePrefix("")
                 .setNaming(NamingStrategy.underline_to_camel)
                 // todo 需要生成的表
-                .setInclude("product_code");
+                .setInclude("device");
         //4.包名策略配置
         PackageConfig pkConfig = new PackageConfig();
-        pkConfig.setParent("com.springboot.springbootmybatisplus")
+        pkConfig.setParent("com.springboot.mybatis_plus")
                 .setMapper("dao")
                 .setService("service")
                 .setController("controller")

@@ -190,7 +190,15 @@ class SpringBootMybatisPlusApplicationTests {
 }
 ```
 
-### 2 SpringBoot整合MyBatis-Plus代码自动生成类
+### 2 SpringBoot整合MyBatis-Plus代码自动生成类 pom导入模板引擎起步依赖
+```
+<!--模板引擎-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.0</version>
+        </dependency>
+```
 
 ## 2.1 创建 com/springboot/mybatis_plus/utils/GlobalConfigs.java
 ```java
