@@ -82,60 +82,49 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
+package com.springboot.mybatis_plus.domain;
+
+import com.baomidou.mybatisplus.enums.IdType;
+import java.util.Date;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableName;
+import lombok.Data;
+import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * <p>
  * 
  * </p>
  *
- * @author 梁其定
- * @since 2020-06-04
+ * @author QiDing
+ * @since 2020-06-08
  */
 @TableName("user")
 @Data
+@Accessors(chain = true)
 public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "user_id", type = IdType.AUTO)
-    private Integer userId;
-    @TableField("user_account")
-    private String userAccount;
-    @TableField("user_passwd")
-    private String userPasswd;
-    @TableField("user_name")
-    private String userName;
-    @TableField("user_mail")
-    private String userMail;
-    @TableField("user_lv")
-    private Integer userLv;
-    @TableField("user_enable")
-    private Integer userEnable;
-    @TableField("user_create_datetime")
-    private Date userCreateDatetime;
-    @TableField("user_phone")
-    private String userPhone;
-    
-    @Override
-    protected Serializable pkVal() {
-        return this.userId;
-    }
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+    private String name;
+    private String username;
+    private String password;
+    private Date date;
 
     @Override
-    public String toString() {
-        return "User{" +
-        ", userId=" + userId +
-        ", userAccount=" + userAccount +
-        ", userPasswd=" + userPasswd +
-        ", userName=" + userName +
-        ", userMail=" + userMail +
-        ", userLv=" + userLv +
-        ", userEnable=" + userEnable +
-        ", userCreateDatetime=" + userCreateDatetime +
-        ", userPhone=" + userPhone +
-        "}";
+    protected Serializable pkVal() {
+        return this.id;
     }
+
 }
+
 ```
 
 ## 1.6 src/main/resources/mybatis/mapper/UserMapper.xml 创建xml映射文件
