@@ -26,4 +26,10 @@
         select COUNT(*) from user
         where username=#{username} and password=#{password}
     </select>
+
+    <select id="checkAccountByUsername" parameterType="String" resultType="Integer">
+        select COUNT(*) from user
+        where username=#{username}
+    </select>
+
 </mapper>
