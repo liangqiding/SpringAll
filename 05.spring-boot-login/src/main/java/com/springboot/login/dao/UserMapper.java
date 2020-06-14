@@ -17,6 +17,11 @@ import java.util.List;
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
     List<User> findAll();
+
+    /**
+     * @param user
+     * @return int
+     */
     Integer checkAccount(User user);
 
     Integer checkAccountByUsername(String username);
