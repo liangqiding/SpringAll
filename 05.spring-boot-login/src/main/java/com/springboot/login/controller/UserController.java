@@ -63,14 +63,11 @@ public class UserController {
             model.addAttribute("msg", "账号已存在");
             return "register";
         }
-
         if (userService.insert(user)){
             model.addAttribute("register", "注册成功");
         }else {
-
             model.addAttribute("msg", "注册失败");
         }
-
         return "register";
     }
 }

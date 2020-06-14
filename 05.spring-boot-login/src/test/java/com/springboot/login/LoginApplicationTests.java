@@ -18,14 +18,17 @@ class LoginApplicationTests {
     UserMapper userMapper;
     @Test
     void contextLoads() {
-        List<User> users = userService.selectList(null);
-        System.out.println(users);
+        System.out.println();
     }
     @Test
      void Test() {
         List<User> all = userMapper.findAll();
-
         System.out.println(all);
+    }
+
+    @Test
+     void Check() {
+//        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
     }
 
 }

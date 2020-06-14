@@ -5,7 +5,7 @@
 >         <dependency>
 >             <groupId>com.baomidou</groupId>
 >           <artifactId>mybatis-plus-boot-starter</artifactId>
->           <version>2.3</version>
+>           <version>3.1.0</version>
 >      </dependency>
 ## 1.2  引入 mysql 数据源
 >     <dependency>
