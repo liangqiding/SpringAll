@@ -62,7 +62,8 @@ public class GlobalConfigs {
                 .setDataSource(dsConfig)
                 .setStrategy(stConfig)
                 .setPackageInfo(pkConfig);
-        //6.执行
+        //6.执行 zz
+
         ag.execute();
     }
 }
