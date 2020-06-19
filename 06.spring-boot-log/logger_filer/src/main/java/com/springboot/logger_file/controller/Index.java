@@ -3,12 +3,12 @@ package com.springboot.logger_file.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
 import java.io.IOException;
-
 /**
  * @Author: QiDing
  * @DateTime: 2020/6/8 0008 11:46
@@ -17,6 +17,7 @@ import java.io.IOException;
 
 @RestController
 public class Index {
+
     private static final Logger logger = LoggerFactory.getLogger(Index.class);
 
     @RequestMapping("log")

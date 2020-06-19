@@ -4,7 +4,6 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.LoggingEvent;
 import ch.qos.logback.core.filter.AbstractMatcherFilter;
 import ch.qos.logback.core.spi.FilterReply;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,6 +17,7 @@ public class Filter extends AbstractMatcherFilter {
 
     @Override
     public FilterReply decide(Object event) {
+
         if (!isStarted()) {
             return FilterReply.NEUTRAL;
         }
@@ -32,5 +32,4 @@ public class Filter extends AbstractMatcherFilter {
             return FilterReply.DENY;
         }
     }
-
 }

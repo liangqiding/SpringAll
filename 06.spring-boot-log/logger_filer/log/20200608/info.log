@@ -20,3 +20,4 @@
 2020-06-08 15:24:10.584 [http-nio-9000-exec-6] INFO  com.springboot.logger_file.controller.Index - org.apache.catalina.connector.RequestFacade@68d13ab
 2020-06-08 15:26:24.197 [http-nio-9000-exec-9] INFO  com.springboot.logger_file.controller.Index - org.apache.catalina.connector.RequestFacade@68d13ab
 2020-06-08 15:26:24.202 [http-nio-9000-exec-1] INFO  com.springboot.logger_file.controller.Index - org.apache.catalina.connector.RequestFacade@68d13ab
+2020-06-08 16:48:16.531 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
