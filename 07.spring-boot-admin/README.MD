@@ -23,6 +23,27 @@ springboot 测试demo
 - [3 编写client](#third)
 - [4 spring-boot-admin日记管理](#fourth)
 
+* [07\.spring\-boot\-admin](#07spring-boot-admin)
+      * [介绍](#%E4%BB%8B%E7%BB%8D)
+  * [Spring Boot Actuator](#spring-boot-actuator)
+    * [Spring Boot Admin](#spring-boot-admin)
+      * [软件架构](#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84)
+      * [安装教程](#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)
+  * [目录](#%E7%9B%AE%E5%BD%95)
+    * [1\. 项目结构 (first)](#1-%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84-first)
+      * [1\.1 介绍](#11-%E4%BB%8B%E7%BB%8D)
+      * [1\.2 效果](#12-%E6%95%88%E6%9E%9C)
+    * [2\. 创建admin server (second)](#2-%E5%88%9B%E5%BB%BAadmin-server-second)
+      * [2\.1 Server配置](#21-server%E9%85%8D%E7%BD%AE)
+      * [2\.2启动运行](#22%E5%90%AF%E5%8A%A8%E8%BF%90%E8%A1%8C)
+    * [3\. 编写client (third)](#3-%E7%BC%96%E5%86%99client-third)
+      * [3\.1 client配置](#31-client%E9%85%8D%E7%BD%AE)
+      * [3\.2启动运行](#32%E5%90%AF%E5%8A%A8%E8%BF%90%E8%A1%8C)
+    * [4\. spring\-boot\-admin日记管理 (fourth)](#4-spring-boot-admin%E6%97%A5%E8%AE%B0%E7%AE%A1%E7%90%86-fourth)
+      * [4\.1 介绍](#41-%E4%BB%8B%E7%BB%8D)
+      * [4\.2 部署配置](#42-%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE)
+    * [4\.3 重新启动client](#43-%E9%87%8D%E6%96%B0%E5%90%AF%E5%8A%A8client)
+    
 ### 1. 项目结构 (first)
 #### 1.1 介绍
 > 新建一个 07.spring-boot-admin 且添加web依赖， 项目下分别新建两个子模块，分别为 server和client
