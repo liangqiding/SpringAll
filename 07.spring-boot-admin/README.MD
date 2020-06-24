@@ -18,10 +18,10 @@ springboot 测试demo
 
 ## 目录
 
-- [1 项目结构](# 项目结构)
-- [2 创建admin server](# 创建admin)
-- [3 编写client](# 编写client)
-- [4 spring-boot-admin日记管理](# spring-boot-admin日记管理)
+- [1 项目结构](#项目结构)
+- [2 创建admin server](#创建admin)
+- [3 编写client](#编写client)
+- [4 spring-boot-admin日记管理](#spring-boot-admin日记管理)
 
 ### 1 项目结构
 #### 1.1 介绍
