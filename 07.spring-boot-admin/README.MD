@@ -18,18 +18,6 @@ springboot 测试demo
 
 ## 目录
 
-- [1 项目结构](#first)
-- [2 创建admin server](#second)
-- [3 编写client](#third)
-- [4 spring-boot-admin日记管理](#fourth)
-
-* [07\.spring\-boot\-admin](#07spring-boot-admin)
-      * [介绍](#%E4%BB%8B%E7%BB%8D)
-  * [Spring Boot Actuator](#spring-boot-actuator)
-    * [Spring Boot Admin](#spring-boot-admin)
-      * [软件架构](#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84)
-      * [安装教程](#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)
-  * [目录](#%E7%9B%AE%E5%BD%95)
     * [1\. 项目结构 (first)](#1-%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84-first)
       * [1\.1 介绍](#11-%E4%BB%8B%E7%BB%8D)
       * [1\.2 效果](#12-%E6%95%88%E6%9E%9C)
