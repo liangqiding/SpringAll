@@ -18,7 +18,10 @@ springboot 测试demo
 
 ## 目录
 
-- [1 activeMQ](#项目结构)
+- [1 项目结构](# 项目结构)
+- [2 创建admin server](# 创建admin)
+- [3 编写client](# 编写client)
+- [4 spring-boot-admin日记管理](# spring-boot-admin日记管理)
 
 ### 1 项目结构
 #### 1.1 介绍
@@ -180,7 +183,7 @@ management:
 >配置完成后效果如图：
 ![admin监控效果3](https://gitee.com/liangqiding/static/raw/master/SpringAll/07/3server.jpg)
 
-### 4 spring-boot-admin 日记
+### 4 spring-boot-admin日记管理
 #### 4.1 介绍
 > spring-boot-admin 有一个强大的功能，就是实时在线查看日志，并且可以动态更改日志级别。
 #### 4.2 部署配置
@@ -315,6 +318,7 @@ logging:
 
 ### 4.3 重新启动client 
 ![admin监控效果4](https://gitee.com/liangqiding/static/raw/master/SpringAll/07/logger.jpg)
+> 在应用墙实例中 打开日记，选择日子文件就可以实现查看日记了，在日记配置中可选择日记的输出等级进行输出
 
 
 
