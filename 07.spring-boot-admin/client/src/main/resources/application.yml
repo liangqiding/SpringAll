@@ -1,0 +1,41 @@
+
+########################################################
+### 访问路径、端口tomcat
+########################################################
+server:
+  port: 2021
+admin:
+  port: 2020
+############################## Spring boot admin start ##############################
+---
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:${admin.port}
+
+# 开启和暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+    logfile:
+      enabled: true        #可在线查看日志
+
+########################################################
+### Log configuration
+### 方便Spring Boot Admin页面上实时查看日志
+### logback.xml中有详细的日志配置
+########################################################
+logging:
+  config: classpath:logback.xml
+  level:
+    root: INFO
+    com.test.demo: info
+  #  方便Spring Boot Admin页面上实时查看日志
+  file:
+    name: logs/demo-server.log
