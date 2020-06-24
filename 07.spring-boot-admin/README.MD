@@ -18,12 +18,12 @@ springboot 测试demo
 
 ## 目录
 
-- [1 项目结构](#1.)
-- [2 创建admin server](#2.)
-- [3 编写client](#3.)
-- [4 spring-boot-admin日记管理](#4.)
+- [1 项目结构](#first)
+- [2 创建admin server](#second)
+- [3 编写client](#third)
+- [4 spring-boot-admin日记管理](#fourth)
 
-### 1. 项目结构
+### 1. 项目结构 (first)
 #### 1.1 介绍
 > 新建一个 07.spring-boot-admin 且添加web依赖， 项目下分别新建两个子模块，分别为 server和client
 >pom 文件依赖
@@ -73,7 +73,7 @@ springboot 测试demo
 ```
 #### 1.2 效果
 ![项目结构](https://gitee.com/liangqiding/static/raw/master/SpringAll/07/structure0.jpg)
-### 2. 创建admin server
+### 2. 创建admin server (second)
 #### 2.1 Server配置
 > 添加 pom依赖
 ```xml
@@ -115,7 +115,7 @@ server:
 ![admin监控效果1](https://gitee.com/liangqiding/static/raw/master/SpringAll/07/1server.jpg)
 > Server运行正常，但是没有Client注册。
 
-### 3. 编写client
+### 3. 编写client (third)
 #### 3.1 client配置
 
 > 添加 pom依赖
@@ -183,7 +183,7 @@ management:
 >配置完成后效果如图：
 ![admin监控效果3](https://gitee.com/liangqiding/static/raw/master/SpringAll/07/3server.jpg)
 
-### 4. spring-boot-admin日记管理
+### 4. spring-boot-admin日记管理 (fourth)
 #### 4.1 介绍
 > spring-boot-admin 有一个强大的功能，就是实时在线查看日志，并且可以动态更改日志级别。
 #### 4.2 部署配置
