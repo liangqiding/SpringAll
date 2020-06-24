@@ -18,6 +18,11 @@ springboot 测试demo
 
 ## 目录
 
+
+
+* [07\.spring\-boot\-admin](#07spring-boot-admin)
+  * 
+  * 
     * [1\. 项目结构 (first)](#1-%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84-first)
       * [1\.1 介绍](#11-%E4%BB%8B%E7%BB%8D)
       * [1\.2 效果](#12-%E6%95%88%E6%9E%9C)
