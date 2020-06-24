@@ -1,28 +1,12 @@
 # 07.spring-boot-admin
 
-#### 介绍
-## Spring Boot Actuator
-Actuator是Spring Boot的模块，它在应用中添加了REST/JMS端点，方便监控和管理应用。端点提供了健康检查、指标监控、访问日志、线程转储、堆转储和环境信息等等。
-
-### Spring Boot Admin
-Actuator功能强大，便于其他应用使用端点（只需要简单的REST调用）。但是开发人员使用时就没那么方便了。对于开发人员，有良好的交互界面会更方便浏览监控数据和管理应用。这正是Spring Boot Admin做的工作。它为actuator端点提供了良好的交互界面，并提供了额外的特性。
-Spring Boot Admin不是Spring团队提供的模块，它是由Codecentric公司创建的，代码在Github上公开。
-
-#### 软件架构
-springboot 测试demo
-
-
-#### 安装教程
-
-1.  建议使用 idea直接导入运行测试
-
-## 目录
-
-
-
 * [07\.spring\-boot\-admin](#07spring-boot-admin)
-  * 
-  * 
+      * [介绍](#%E4%BB%8B%E7%BB%8D)
+  * [Spring Boot Actuator](#spring-boot-actuator)
+    * [Spring Boot Admin](#spring-boot-admin)
+      * [软件架构](#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84)
+      * [安装教程](#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)
+  * [目录](#%E7%9B%AE%E5%BD%95)
     * [1\. 项目结构 (first)](#1-%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84-first)
       * [1\.1 介绍](#11-%E4%BB%8B%E7%BB%8D)
       * [1\.2 效果](#12-%E6%95%88%E6%9E%9C)
@@ -35,7 +19,25 @@ springboot 测试demo
     * [4\. spring\-boot\-admin日记管理 (fourth)](#4-spring-boot-admin%E6%97%A5%E8%AE%B0%E7%AE%A1%E7%90%86-fourth)
       * [4\.1 介绍](#41-%E4%BB%8B%E7%BB%8D)
       * [4\.2 部署配置](#42-%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE)
-    * [4\.3 重新启动client](#43-%E9%87%8D%E6%96%B0%E5%90%AF%E5%8A%A8client)
+    * [4\.3 spring\-boot\-admin 实时显示日记](#43-spring-boot-admin-%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E6%97%A5%E8%AE%B0)
+
+
+#### 介绍
+## Spring Boot Actuator
+Actuator是Spring Boot的模块，它在应用中添加了REST/JMS端点，方便监控和管理应用。端点提供了健康检查、指标监控、访问日志、线程转储、堆转储和环境信息等等。
+
+### Spring Boot Admin
+Actuator功能强大，便于其他应用使用端点（只需要简单的REST调用）。但是开发人员使用时就没那么方便了。对于开发人员，有良好的交互界面会更方便浏览监控数据和管理应用。这正是Spring Boot Admin做的工作。它为actuator端点提供了良好的交互界面，并提供了额外的特性。
+Spring Boot Admin不是Spring团队提供的模块，它是由Codecentric公司创建的，代码在Github上公开。
+
+#### 软件架构
+springboot 测试demo
+
+#### 安装教程
+
+1.  建议使用 idea直接导入运行测试
+
+
     
 ### 1. 项目结构 (first)
 #### 1.1 介绍
@@ -330,7 +332,7 @@ logging:
 ```
 > logging路径必须配置 spring-boot-admin将通过此路径寻找日记文件
 
-### 4.3 重新启动client 
+### 4.3 spring-boot-admin 实时显示日记
 ![admin监控效果4](https://gitee.com/liangqiding/static/raw/master/SpringAll/07/logger.jpg)
 > 在应用墙实例中 打开日记，选择日子文件就可以实现查看日记了，在日记配置中可选择日记的输出等级进行输出
 
