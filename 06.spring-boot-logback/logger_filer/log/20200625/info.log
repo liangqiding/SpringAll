@@ -1,0 +1,37 @@
+2020-06-25 10:55:36.119 [main] INFO  com.springboot.logger_file.LoggerFileApplication2 - Starting LoggerFileApplication2 on VGWZXVHFCA3GX8I with PID 14488 (F:\Git\SpringAll\06.spring-boot-logback\logger_filer\target\classes started by Administrator in F:\Git\SpringAll\06.spring-boot-logback\logger_filer)
+2020-06-25 10:55:36.122 [main] INFO  com.springboot.logger_file.LoggerFileApplication2 - No active profile set, falling back to default profiles: default
+2020-06-25 10:55:37.174 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9000 (http)
+2020-06-25 10:55:37.185 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-25 10:55:37.186 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-25 10:55:37.293 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-25 10:55:37.294 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1078 ms
+2020-06-25 10:55:37.493 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-25 10:55:37.666 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9000 (http) with context path ''
+2020-06-25 10:55:37.678 [main] INFO  com.springboot.logger_file.LoggerFileApplication2 - Started LoggerFileApplication2 in 2.245 seconds (JVM running for 4.627)
+2020-06-25 11:14:12.941 [main] INFO  com.springboot.logger_file.LoggerFileApplication2 - Starting LoggerFileApplication2 on VGWZXVHFCA3GX8I with PID 13564 (F:\Git\SpringAll\06.spring-boot-logback\logger_filer\target\classes started by Administrator in F:\Git\SpringAll\06.spring-boot-logback\logger_filer)
+2020-06-25 11:14:12.949 [main] INFO  com.springboot.logger_file.LoggerFileApplication2 - No active profile set, falling back to default profiles: default
+2020-06-25 11:14:14.157 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9000 (http)
+2020-06-25 11:14:14.172 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-25 11:14:14.172 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-25 11:14:14.272 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-25 11:14:14.274 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1262 ms
+2020-06-25 11:14:14.529 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-25 11:14:14.618 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-25 11:14:14.621 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-06-25 11:14:14.639 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-25 11:15:06.194 [main] INFO  com.springboot.logger_file.LoggerFileApplication2 - Starting LoggerFileApplication2 on VGWZXVHFCA3GX8I with PID 13828 (F:\Git\SpringAll\06.spring-boot-logback\logger_filer\target\classes started by Administrator in F:\Git\SpringAll\06.spring-boot-logback\logger_filer)
+2020-06-25 11:15:06.199 [main] INFO  com.springboot.logger_file.LoggerFileApplication2 - No active profile set, falling back to default profiles: default
+2020-06-25 11:15:07.308 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9000 (http)
+2020-06-25 11:15:07.317 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-25 11:15:07.318 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-25 11:15:07.416 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-25 11:15:07.417 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1113 ms
+2020-06-25 11:15:07.630 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-25 11:15:07.836 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9000 (http) with context path ''
+2020-06-25 11:15:07.849 [main] INFO  com.springboot.logger_file.LoggerFileApplication2 - Started LoggerFileApplication2 in 2.291 seconds (JVM running for 3.756)
+2020-06-25 11:15:26.736 [http-nio-9000-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-25 11:15:26.737 [http-nio-9000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-25 11:15:26.748 [http-nio-9000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2020-06-25 11:15:26.784 [http-nio-9000-exec-1] INFO  com.springboot.logger_file.controller.Index - info 日记打印

@@ -3,12 +3,13 @@ package com.springboot.logger_file.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.concurrent.locks.Lock;
+
 /**
  * @Author: QiDing
  * @DateTime: 2020/6/8 0008 11:46
@@ -19,6 +20,21 @@ import java.io.IOException;
 public class Index {
 
     private static final Logger logger = LoggerFactory.getLogger(Index.class);
+
+    @RequestMapping("/info")
+    public String info() {
+           logger.info("info 日记打印");
+        return "success";
+    }
+    @RequestMapping("/err")
+    public String error() {
+           logger.error("error 日记打印");
+        return "success";
+    }
+
+
+
+
 
     @RequestMapping("log")
     public void log(HttpServletRequest httpServletRequest) throws IOException {
@@ -38,8 +54,6 @@ public class Index {
         } else {
             logger.info(wholeStr);
         }
-
-
     }
 
 }

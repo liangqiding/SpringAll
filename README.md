@@ -10,3 +10,4 @@
 - [05.spring-boot-login：整合1-4 项目实战：登录模块](https://github.com/liangqiding/SpringAll/tree/master/05.spring-boot-login)
 - [06.spring-boot-logback：日记管理](https://github.com/liangqiding/SpringAll/tree/master/06.spring-boot-log)
 - [07.spring-boot-admin：可视化监控](https://github.com/liangqiding/SpringAll/tree/master/07.spring-boot-admin)
+
