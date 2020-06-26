@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.concurrent.locks.Lock;
 
 /**
  * @Author: QiDing

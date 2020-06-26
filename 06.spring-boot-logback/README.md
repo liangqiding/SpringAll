@@ -22,7 +22,7 @@ springboot 测试demo
 
 #### 安装教程
 
-1.  建议使用 idea直接导入运行测试
+ 建议使用 idea直接导入运行测试
 
 ##  1 logger_filer单机模式下开启日记
 ### 1.1 引入相关的依赖
@@ -179,6 +179,7 @@ public class Index {
 ### 1.5 启动项目，访问 localhost:9000 查看效果
 
 ### ==========================================================
+![result images](https://gitee.com/liangqiding/static/raw/master/SpringAll/06/result.jpg)
 ### ==========================================================
 
 
