@@ -1,6 +1,7 @@
 package admin.controller;
 
 
+import admin.config.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,7 @@ public class Index {
     @GetMapping("/test")
     public String error() {
         logger.error("error 模拟");
+        ResponseResult<Object> objectResponseResult = new ResponseResult<>(200,"","");
         return "test error ";
     }
 

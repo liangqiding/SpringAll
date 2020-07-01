@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.springboot.logger_file.LoggerFileApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.879 s - in com.springboot.logger_file.LoggerFileApplicationTests

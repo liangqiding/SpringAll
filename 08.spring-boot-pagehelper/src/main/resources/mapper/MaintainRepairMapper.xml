@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.boot.pagehelper.dao.MaintainRepairMapper">
+
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="spring.boot.pagehelper.domain.MaintainRepair">
+        <id column="maintain_id" property="maintainId" />
+        <result column="product_name" property="productName" />
+        <result column="hitch_type" property="hitchType" />
+        <result column="hitch_info" property="hitchInfo" />
+        <result column="address_phone" property="addressPhone" />
+        <result column="maintain_file_id" property="maintainFileId" />
+        <result column="address_province" property="addressProvince" />
+        <result column="address_city" property="addressCity" />
+        <result column="address_town" property="addressTown" />
+        <result column="address_detailed" property="addressDetailed" />
+        <result column="address_post" property="addressPost" />
+        <result column="is_delete" property="isDelete" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="check_status" property="checkStatus" />
+        <result column="repair_order_id" property="repairOrderId" />
+        <result column="check_info" property="checkInfo" />
+        <result column="check_time" property="checkTime" />
+        <result column="client_accept" property="clientAccept" />
+        <result column="client_accept_time" property="clientAcceptTime" />
+        <result column="maintain_handle_id" property="maintainHandleId" />
+        <result column="maintain_company_user_id" property="maintainCompanyUserId" />
+        <result column="maintain_client_id" property="maintainClientId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        maintain_id, product_name, hitch_type, hitch_info, address_phone, maintain_file_id, address_province, address_city, address_town, address_detailed, address_post, is_delete, create_time, update_time, check_status, repair_order_id, check_info, check_time, client_accept, client_accept_time, maintain_handle_id, maintain_company_user_id, maintain_client_id
+    </sql>
+
+    <!--    &lt;!&ndash;    一对多查询&ndash;&gt;-->
+    <select id="selectListRepairAndFile" resultMap="Select">
+ SELECT *
+ FROM
+maintain_repair a
+
+LEFT JOIN maintain_handle b on
+a.maintain_handle_id=b.maintain_handle_id
+        </select>
+
+    <resultMap id="Select" type="maintainRepair">
+        <!--            通过此ID为主键查询-->
+        <id column="maintain_id" property="maintainId" />
+        <result column="product_name" property="productName" />
+        <result column="hitch_type" property="hitchType" />
+        <result column="hitch_info" property="hitchInfo" />
+        <result column="address_phone" property="addressPhone" />
+        <result column="maintain_file_id" property="maintainFileId" />
+        <result column="address_province" property="addressProvince" />
+        <result column="address_city" property="addressCity" />
+        <result column="address_town" property="addressTown" />
+        <result column="address_detailed" property="addressDetailed" />
+        <result column="address_post" property="addressPost" />
+        <result column="is_delete" property="isDelete" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="check_status" property="checkStatus" />
+        <result column="repair_order_id" property="repairOrderId" />
+        <result column="check_info" property="checkInfo" />
+        <result column="check_time" property="checkTime" />
+        <result column="client_accept" property="clientAccept" />
+        <result column="client_accept_time" property="clientAcceptTime" />
+        <result column="maintain_handle_id" property="maintainHandleId" />
+        <result column="maintain_company_user_id" property="maintainCompanyUserId" />
+        <result column="maintain_client_id" property="maintainClientId" />
+
+<!--        <collection property="maintainFileList" javaType="List" ofType="maintainFile">-->
+<!--            &lt;!&ndash;            通过此ID关联&ndash;&gt;-->
+<!--            <id property="id" column="file_id"/>-->
+<!--            <result column="file_path" property="filePath"/>-->
+<!--            <result column="file_type" property="fileType"/>-->
+<!--        </collection>-->
+
+        <collection property="maintainHandleList" javaType="List" ofType="MaintainHandle">
+            <!--            通过此ID关联-->
+            <id property="id" column="handle_id"/>
+            <result column="handle_time" property="handleTime" />
+            <result column="handle_step" property="handleStep" />
+            <result column="handle_info" property="handleInfo" />
+        </collection>
+
+    </resultMap>
+</mapper>
