@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.boot.pagehelper.dao.QdCartMapper">
+
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="spring.boot.pagehelper.domain.QdCart">
+        <id column="cart_id" property="cartId" />
+        <result column="cart_name" property="cartName" />
+        <result column="cart_time" property="cartTime" />
+        <result column="cart_status" property="cartStatus" />
+        <result column="cart_sum" property="cartSum" />
+        <result column="cart_price" property="cartPrice" />
+        <result column="order_id" property="orderId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        cart_id, cart_name, cart_time, cart_status, cart_sum, cart_price, order_id
+    </sql>
+
+</mapper>
