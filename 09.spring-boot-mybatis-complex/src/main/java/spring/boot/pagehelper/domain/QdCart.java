@@ -9,6 +9,9 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import lombok.Data;
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 /**
@@ -20,6 +23,8 @@ import java.io.Serializable;
  * @since 2020-07-01
  */
 @TableName("qd_cart")
+@Accessors(chain = true)
+@Data
 public class QdCart extends Model<QdCart> {
 
     private static final long serialVersionUID = 1L;
@@ -58,77 +63,10 @@ public class QdCart extends Model<QdCart> {
     private Integer orderId;
 
 
-    public Integer getCartId() {
-        return cartId;
-    }
-
-    public void setCartId(Integer cartId) {
-        this.cartId = cartId;
-    }
-
-    public String getCartName() {
-        return cartName;
-    }
-
-    public void setCartName(String cartName) {
-        this.cartName = cartName;
-    }
-
-    public Date getCartTime() {
-        return cartTime;
-    }
-
-    public void setCartTime(Date cartTime) {
-        this.cartTime = cartTime;
-    }
-
-    public String getCartStatus() {
-        return cartStatus;
-    }
-
-    public void setCartStatus(String cartStatus) {
-        this.cartStatus = cartStatus;
-    }
-
-    public Integer getCartSum() {
-        return cartSum;
-    }
-
-    public void setCartSum(Integer cartSum) {
-        this.cartSum = cartSum;
-    }
-
-    public BigDecimal getCartPrice() {
-        return cartPrice;
-    }
-
-    public void setCartPrice(BigDecimal cartPrice) {
-        this.cartPrice = cartPrice;
-    }
-
-    public Integer getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
 
     @Override
     protected Serializable pkVal() {
         return this.cartId;
     }
 
-    @Override
-    public String toString() {
-        return "QdCart{" +
-        ", cartId=" + cartId +
-        ", cartName=" + cartName +
-        ", cartTime=" + cartTime +
-        ", cartStatus=" + cartStatus +
-        ", cartSum=" + cartSum +
-        ", cartPrice=" + cartPrice +
-        ", orderId=" + orderId +
-        "}";
-    }
 }

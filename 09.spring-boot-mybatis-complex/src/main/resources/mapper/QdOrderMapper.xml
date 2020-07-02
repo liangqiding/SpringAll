@@ -3,18 +3,63 @@
 <mapper namespace="spring.boot.pagehelper.dao.QdOrderMapper">
 
 
-
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="spring.boot.pagehelper.domain.QdOrder">
-        <id column="order_id" property="orderId" />
-        <result column="order_time" property="orderTime" />
-        <result column="order_status" property="orderStatus" />
-        <result column="user_id" property="userId" />
+        <id column="order_id" property="orderId"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="user_id" property="userId"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         order_id, order_time, order_status, user_id
     </sql>
+
+    <!--    1.1 -->
+    <select id="getQdOrderById" parameterType="Integer" resultType="QdOrder">
+        select
+        <include refid="Base_Column_List"></include>
+        from qd_order
+        where order_id=#{orderId}
+    </select>
+    <!--1.2 -->
+    <select id="listQdOrder" resultType="QdOrder">
+        select
+        <include refid="Base_Column_List"></include>
+        from qd_order
+    </select>
+    <!--1.3-->
+    <insert id="InsertQdOrder" parameterType="QdOrder">
+        INSERT INTO
+        qd_order
+        (order_time, order_status, user_id, order_user_id)
+        VALUES
+        (#{orderTime}, #{orderStatus}, #{userId}, #{orderUserId});
+    </insert>
+    <!--1.4-->
+    <update id="updateQdOrder" parameterType="QdOrder">
+        UPDATE qd_order
+        <set>
+            <if test="orderTime !=null ">
+                order_time= #{orderTime},
+            </if>
+            <if test="orderStatus !=null and orderStatus!=''">
+                order_status= #{orderStatus},
+            </if>
+            <if test="userId !=null">
+                user_id= #{userId},
+            </if>
+            <if test="orderUserId !=null">
+                order_user_id= #{orderUserId},
+            </if>
+        </set>
+        WHERE
+        `order_id` = #{orderId};
+    </update>
+    <!--1.5-->
+    <delete id="deleteQdOrderById" parameterType="Integer">
+       DELETE FROM qd_order WHERE order_id = #{orderId}
+    </delete>
 
 </mapper>

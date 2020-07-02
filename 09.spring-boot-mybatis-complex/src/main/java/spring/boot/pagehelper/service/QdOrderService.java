@@ -15,4 +15,5 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface QdOrderService extends IService<QdOrder> {
     PageInfo<QdOrder> listCartsByPage(Integer pageNum,Integer pageSize);
+
 }

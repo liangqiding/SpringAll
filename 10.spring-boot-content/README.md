@@ -66,5 +66,5 @@ class ContentApplicationTests {
 | 1      | charset  |   UTF-8   |  文件编码      |
 | 2        |   write  |   true  |    是否将 toc 写入文件(默认写入)    |
 | 3        |   subTree  |   true  |   是否包含子文件夹的文件(默认包含)   |
-| 4        |   genTocFile  |     |   读取单个文件   |
+| 4        |   genTocFile()  |     |   读取单个文件   |
 | 5        |   genTocDir()  |     |   读取文件夹多个文件   |

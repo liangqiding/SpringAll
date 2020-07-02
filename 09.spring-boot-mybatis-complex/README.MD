@@ -1,210 +1,176 @@
 # mybatis-plus 复杂查询
 ## 目录
 
-
+## 简介
+> pom、yml等均和08项目相同，xml 自定义sql的方式完成mysql多表连接查询、分页、模糊、嵌套等查询
 ## 1 起步
-### 1.1 配置pom
->引入pageHelper等依赖
+### 1.1 项目基本配置
+> 复制08项目中的起步依赖和yml中的配置以及GlobalConfigs
+>运行GlobalConfigs 一键生成代码模板
+
+## 2 增删改查简单测试
+### 2.1 dao层接口编写
+> 编辑数据接口
+```java
+public interface QdOrderMapper extends BaseMapper<QdOrder> {
+
+    /**
+     *  todo 查询单个
+     * @param orderId id
+     * @return one
+     */
+    QdOrder getQdOrderById(Integer orderId);
+
+    /**
+     * todo 查询多个
+     * @return list
+     */
+    List<QdOrder> listQdOrder();
+
+    /**
+     * todo 删除单个
+     * @param orderId id
+     * @return int
+     */
+    int deleteQdOrderById(Integer orderId);
+
+    /**
+     * todo 增加单个
+     * @param qdOrder
+     * @return
+     */
+    int InsertQdOrder(QdOrder qdOrder);
+
+    /**
+     * todo 更新多个
+     * @param qdOrder
+     * @return  ·
+     */
+    int updateQdOrder(QdOrder qdOrder);
+
+}
+```
+> 编写xml文件，完成sql语句和dao层绑定
 ```xml
-<!--       mybatis plus-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.boot.pagehelper.dao.QdOrderMapper">
 
-        <!--模板引擎-->
-        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity-engine-core</artifactId>
-            <version>2.0</version>
-        </dependency>
-        <!--         数据源-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="spring.boot.pagehelper.domain.QdOrder">
+        <id column="order_id" property="orderId"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="user_id" property="userId"/>
+    </resultMap>
 
-        <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.2.13</version>
-        </dependency>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        order_id, order_time, order_status, user_id
+    </sql>
+
+    <!--    1.1 -->
+    <select id="getQdOrderById" parameterType="Integer" resultType="QdOrder">
+        select
+        <include refid="Base_Column_List"></include>
+        from qd_order
+        where order_id=#{orderId}
+    </select>
+    <!--1.2 -->
+    <select id="listQdOrder" resultType="QdOrder">
+        select
+        <include refid="Base_Column_List"></include>
+        from qd_order
+    </select>
+    <!--1.3-->
+    <insert id="InsertQdOrder" parameterType="QdOrder">
+        INSERT INTO
+        qd_order
+        (order_time, order_status, user_id, order_user_id)
+        VALUES
+        (#{orderTime}, #{orderStatus}, #{userId}, #{orderUserId});
+    </insert>
+    <!--1.4-->
+    <update id="updateQdOrder" parameterType="QdOrder">
+        UPDATE qd_order
+        <set>
+            <if test="orderTime !=null ">
+                order_time= #{orderTime},
+            </if>
+            <if test="orderStatus !=null and orderStatus!=''">
+                order_status= #{orderStatus},
+            </if>
+            <if test="userId !=null">
+                user_id= #{userId},
+            </if>
+            <if test="orderUserId !=null">
+                order_user_id= #{orderUserId},
+            </if>
+        </set>
+        WHERE
+        `order_id` = #{orderId};
+    </update>
+    <!--1.5-->
+    <delete id="deleteQdOrderById" parameterType="Integer">
+       DELETE FROM qd_order WHERE order_id = #{orderId}
+    </delete>
+
+</mapper>
 ```
-### 1.2 配置yml
-> yml 中添加以下配置
-```
-
-spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/spring_all?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
-    username: root
-    password: 12345678
-
-mybatis-plus:
-  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
-  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
-  mapper-locations: classpath:/mapper/*.xml
-  #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: spring.boot.pagehelper.domain
-  global-config:
-    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
-    id-type: 0
-    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
-    field-strategy: 1
-    #驼峰下划线转换
-    #db-column-underline: true
-    #刷新mapper 调试神器
-    refresh-mapper: true
-    #数据库大写下划线转换
-    #capital-mode: true
-    #Sequence序列接口实现类配置
-    #key-generator: com.springboot.mybatis_plus.incrementer.OracleKeyGenerator
-    #逻辑删除配置（下面3个配置）
-    #logic-delete-value: 1
-    #logic-not-delete-value: 0
-    #sql-injector: com.springboot.mybatis_plus.dao.LogicSqlInjector
-    #自定义填充策略接口实现
-    #meta-object-handler: com.springboot.mybatis_plus.MyMetaObjectHandler
-  configuration:
-    map-underscore-to-camel-case: true
-    cache-enabled: false
-    #配置JdbcTypeForNull
-    jdbc-type-for-null: 'null'
-
-logging.level.spring.boot.pagehelper.dao: debug
-server:
-  port: 20000
-```
-### 1.3 初始化数据库
-> 导入数据库及数据  在项目根路径下：spring_all.sql
->数据库逻辑关系如下
-![00数据库er图](https://gitee.com/liangqiding/static/raw/master/SpringAll/08/00.png)
-> 运行GlobalConfigs 代码生成工具生成代码
-![01数据库效果](https://gitee.com/liangqiding/static/raw/master/SpringAll/08/01.png)
-
-## 2 引用pageHelper实现分页
->官方说明参考：
->https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md
-### 2.1 分页逻辑编写
-> 编写 service层,完成分页逻辑编写
+### 2.2测试类编写
+> 导入数据库，sql文件在项目路径下
+> 编写测试类,测试数据CURD
 ```java
-@Override
-    public PageInfo<QdOrder> listCartsByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<QdOrder> qdOrders = selectList(null);
-        return new PageInfo<>(qdOrders);
-    }
-```
-### 2.2 运行测试
-> 编写测试方法
-```java
- @Autowired
-    QdOrderServiceImpl qdOrderService;
+
+@SpringBootTest
+class PagehelperApplicationTests {
+@Autowired
+    QdOrderMapper qdOrderMapper;
+
+    // todo 1.1 根据id查询单个
     @Test
-    void page01() {
-        PageInfo<QdOrder> qdOrderPageInfo = qdOrderService.listCartsByPage(1, 10);
-        System.out.println(qdOrderPageInfo);
-    }
-```
-### 2.3 测试效果
-> 运行结果
-![02测试效果](https://gitee.com/liangqiding/static/raw/master/SpringAll/08/02.png)
->从sql的运行语句中可看到，查询已经进行了LIMIT分页，结果也附加上了分页属性，如页码等信息
-### 2.4 pageHelper参数说明
->各参数含义
-```java
-//当前页
-private int pageNum;
-
-//每页的数量
-private int pageSize;
-
-//当前页的数量
-private int size;
-
-//由于startRow和endRow不常用，这里说个具体的用法
-//可以在页面中"显示startRow到endRow 共size条数据"
-//当前页面第一个元素在数据库中的行号
-private int startRow;
-
-//当前页面最后一个元素在数据库中的行号
-private int endRow;
-//总记录数
-private long total;
-
-//总页数
-private int pages;
-
-//结果集(每页显示的数据)
-private List<T> list;
-
-//第一页
-private int firstPage;
-
-//前一页
-private int prePage;
-
-//是否为第一页
-private boolean isFirstPage = false;
-
-//是否为最后一页
-private boolean isLastPage = false;
-
-//是否有前一页
-private boolean hasPreviousPage = false;
-
-//是否有下一页
-private boolean hasNextPage = false;
-
-//导航页码数
-private int navigatePages;
-
-//所有导航页号
-private int[] navigatepageNums;
-```
-## 3 fastjson Json格式化工具
-### 3.1 起步
-> 引入fastjson依赖
-```xml
-<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.71</version>
-        </dependency>
-```
-### 3.2 引用fastjson
-> 封装转换方法
-```java
-public String formatJson(Object s) {
-        return JSON.toJSONString(s);
-    }
-```
-> 结合上一步骤中的分页查询，对结果进行格式化
-```java
-public String formatJson(Object s) {
-        return JSON.toJSONString(s);
+    void getQdOrderById() {
+        QdOrder qdOrderById = qdOrderMapper.getQdOrderById(1);
+        System.out.println(qdOrderById);
     }
 
-    @Autowired
-    QdOrderServiceImpl qdOrderService;
+    // todo 1.2 查询多个
     @Test
-    void page01() {
-        PageInfo<QdOrder> qdOrderPageInfo = qdOrderService.listCartsByPage(1, 10);
-//        System.out.println(qdOrderPageInfo);
-        System.out.println(formatJson(qdOrderPageInfo));
+     void listQdOrder() {
+        List<QdOrder> qdOrders = qdOrderMapper.listQdOrder();
+        System.out.println(qdOrders);
     }
+
+    // todo 1.3 添加单条数据
+    @Test
+    void InsertQdOrder() {
+        Date date = new Date();
+        int i = qdOrderMapper.InsertQdOrder(
+                new QdOrder()
+                        .setOrderTime(date)
+                        .setUserId(1010)
+                        .setOrderUserId(2020)
+                        .setOrderStatus("待支付")
+        );
+        System.out.println(i);
+    }
+
+    // todo 1.4 更新数据
+    @Test
+    void updateQdOrder() {
+        int i = qdOrderMapper.updateQdOrder(
+                new QdOrder()
+                        .setOrderTime(new Date())
+                        .setOrderStatus("已支付")
+                        .setOrderId(6)
+        );
+        System.out.println(i);
+    }
+    // todo 1.5 删除单条数据
+    @Test
+    void deleteQdOrderById() {
+        int i = qdOrderMapper.deleteQdOrderById(6);
+        System.out.println(i);
+    }
+}
 ```
-### 3.3 运行结果
-> 运行后，复制运行结果，浏览器打开
-> http://www.json.cn/ 
-> 把结果复制进去，就可以看到格式化后的结果了，更方便我们进行测试查看
-![03json转化效果](https://gitee.com/liangqiding/static/raw/master/SpringAll/08/03.png)

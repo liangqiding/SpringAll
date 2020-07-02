@@ -4,10 +4,11 @@ import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import lombok.Data;
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 /**
@@ -19,6 +20,8 @@ import java.io.Serializable;
  * @since 2020-07-01
  */
 @TableName("qd_order")
+@Accessors(chain = true)
+@Data
 public class QdOrder extends Model<QdOrder> {
 
     private static final long serialVersionUID = 1L;
@@ -44,51 +47,12 @@ public class QdOrder extends Model<QdOrder> {
     @TableField("user_id")
     private Integer userId;
 
-
-    public Integer getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
-
-    public Date getOrderTime() {
-        return orderTime;
-    }
-
-    public void setOrderTime(Date orderTime) {
-        this.orderTime = orderTime;
-    }
-
-    public String getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
+    @TableField("order_user_id")
+    private Integer orderUserId;
 
     @Override
     protected Serializable pkVal() {
         return this.orderId;
     }
 
-    @Override
-    public String toString() {
-        return "QdOrder{" +
-        ", orderId=" + orderId +
-        ", orderTime=" + orderTime +
-        ", orderStatus=" + orderStatus +
-        ", userId=" + userId +
-        "}";
-    }
 }
