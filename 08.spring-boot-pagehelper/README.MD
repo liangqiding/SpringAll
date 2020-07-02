@@ -6,25 +6,6 @@
   * [1 起步](#1-起步)
     * [1.1 配置pom](#11-配置pom)
     * [1.2 配置yml](#12-配置yml)
-* [如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml](#如果是放在srcmainjava目录下-classpathcomyourpackagemappermapperxml)
-* [如果是放在resource目录 classpath:/mapper/*Mapper.xml](#如果是放在resource目录-classpathmappermapperxml)
-                                              * [](#)
-        * [0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";](#0数据库id自增-1用户输入id2全局唯一id-数字类型唯一id-3全局唯一id-uuid)
-        * [0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"](#0忽略判断1非-null-判断2非空判断)
-              * [](#-1)
-                                        * [true](#true)
-                * [调试神器](#调试神器)
-                    * [](#-2)
-                          * [true](#true-1)
-                                  * [](#-3)
-                            * [com.springboot.mybatis_plus.incrementer.OracleKeyGenerator](#comspringbootmybatis_plusincrementeroraclekeygenerator)
-                            * [](#-4)
-                                      * [1](#1)
-                                              * [0](#0)
-                          * [com.springboot.mybatis_plus.dao.LogicSqlInjector](#comspringbootmybatis_plusdaologicsqlinjector)
-                      * [](#-5)
-                                        * [com.springboot.mybatis_plus.MyMetaObjectHandler](#comspringbootmybatis_plusmymetaobjecthandler)
-                                  * [](#-6)
     * [1.3 初始化数据库](#13-初始化数据库)
   * [2 引用pageHelper实现分页](#2-引用pagehelper实现分页)
     * [2.1 分页逻辑编写](#21-分页逻辑编写)
@@ -35,7 +16,6 @@
     * [3.1 起步](#31-起步)
     * [3.2 引用fastjson](#32-引用fastjson)
     * [3.3 运行结果](#33-运行结果)
-
 
 ## 1 起步
 ### 1.1 配置pom
@@ -120,7 +100,7 @@ server:
 ```
 ### 1.3 初始化数据库
 > 导入数据库及数据  在项目根路径下：spring_all.sql
->数据库逻辑关系如下
+> 数据库逻辑关系如下
 ![00数据库er图](https://gitee.com/liangqiding/static/raw/master/SpringAll/08/00.png)
 > 运行GlobalConfigs 代码生成工具生成代码
 ![01数据库效果](https://gitee.com/liangqiding/static/raw/master/SpringAll/08/01.png)
