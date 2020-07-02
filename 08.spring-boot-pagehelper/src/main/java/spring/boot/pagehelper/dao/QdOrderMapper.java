@@ -1,6 +1,6 @@
 package spring.boot.pagehelper.dao;
 
-import spring.boot.pagehelper.domain.MaintainFile;
+import spring.boot.pagehelper.domain.QdOrder;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author QiDing
- * @since 2020-06-30
+ * @since 2020-07-01
  */
-public interface MaintainFileMapper extends BaseMapper<MaintainFile> {
+public interface QdOrderMapper extends BaseMapper<QdOrder> {
 
 }

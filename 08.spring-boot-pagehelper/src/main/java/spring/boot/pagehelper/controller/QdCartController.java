@@ -11,11 +11,11 @@ import org.springframework.stereotype.Controller;
  * </p>
  *
  * @author QiDing
- * @since 2020-06-30
+ * @since 2020-07-01
  */
 @Controller
-@RequestMapping("/maintainRepair")
-public class MaintainRepairController {
+@RequestMapping("/qdCart")
+public class QdCartController {
 
 }
 

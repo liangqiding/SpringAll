@@ -1,6 +1,6 @@
 package spring.boot.pagehelper.service;
 
-import spring.boot.pagehelper.domain.MaintainCompany;
+import spring.boot.pagehelper.domain.QdCart;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @author QiDing
  * @since 2020-07-01
  */
-public interface MaintainCompanyService extends IService<MaintainCompany> {
+public interface QdCartService extends IService<QdCart> {
 
 }

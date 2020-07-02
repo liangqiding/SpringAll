@@ -1,6 +1,6 @@
 package spring.boot.pagehelper.dao;
 
-import spring.boot.pagehelper.domain.MaintainHandle;
+import spring.boot.pagehelper.domain.QdCart;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author QiDing
- * @since 2020-06-30
+ * @since 2020-07-01
  */
-public interface MaintainHandleMapper extends BaseMapper<MaintainHandle> {
+public interface QdCartMapper extends BaseMapper<QdCart> {
 
 }

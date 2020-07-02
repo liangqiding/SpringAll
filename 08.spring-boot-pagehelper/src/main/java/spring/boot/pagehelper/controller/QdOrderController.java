@@ -14,8 +14,8 @@ import org.springframework.stereotype.Controller;
  * @since 2020-07-01
  */
 @Controller
-@RequestMapping("/maintainCompany")
-public class MaintainCompanyController {
+@RequestMapping("/qdOrder")
+public class QdOrderController {
 
 }
 
